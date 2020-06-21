@@ -1,0 +1,102 @@
+﻿@model MvcPhone.Models.Customer
+<div class="hidden-xs col-sm-4 col-md-3">
+    <div class="boxleft">
+        <div class="titboxl">
+            <span>TÀI KHOẢN</span>
+        </div>
+        <div class="ctboxleft">
+            <ul class="mnboxl">
+                <li><a href="index.php?xem=dangky&id=1"><i class="fa fa-user-plus"></i>Đăng ký</a></li>
+                <li><a href="index.php?xem=dangnhap&id=1"><i class="fa fa-sign-in"> </i>Đăng nhập</a></li>
+                <li><a href=""><i class="fa fa-key"></i>Quên mật khẩu</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-8 col-md-9 ">
+
+    <form asp-action="Dangky">
+        <div class="labelform"><p style="text-align:center;">ĐĂNG KÝ THÀNH VIÊN</p></div>
+        <span class="badge">*Thông tin đăng nhập*</span>
+        <span  class="text-danger">@ViewBag.error</span>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group ">
+            <label class="col-md-3 control-label">
+                Tên đăng nhập(*)
+                <i class="fa fa-user prefix grey-text"></i>
+            </label>
+            <div class="col-md-7">
+                <input asp-for="tendangnhap" class="form-control">
+                <span asp-validation-for="tendangnhap" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                Mật khẩu(*)
+                <i class="fa fa-lock prefix grey-text"></i>
+            </label>
+            <div class="col-md-7">
+                <input asp-for="matkhau" class="form-control">
+                <span asp-validation-for="matkhau" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                Nhập lại(*)
+                <i class="fa fa-exclamation-triangle prefix grey-text"></i>
+            </label>
+            <div class="col-md-7">
+                <input asp-for="matkhaunhaplai" class="form-control">
+                <span asp-validation-for="matkhaunhaplai" class="text-danger"></span>
+            </div>
+        </div>
+        <span class="badge">*Thông tin cá nhân*</span>
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                Họ Và Tên
+                <i class="fa fa-user prefix grey-text"></i>
+            </label>
+            <div class="col-md-7">
+                <input asp-for="hoten" class="form-control">
+                <span asp-validation-for="hoten" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                Gmail
+                <i class="fa fa-envelope prefix grey-text"></i>
+            </label>
+            <div class="col-md-7">
+                <input asp-for="gmail" class="form-control">
+                <span asp-validation-for="gmail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                Điện thoại
+                <i class="fa fa-phone"></i>
+            </label>
+            <div class="col-md-7">
+                <input asp-for="sdt" class="form-control">
+                <span asp-validation-for="sdt" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                Địa chỉ
+                <i class="fa fa-map-marker"></i>
+            </label>
+            <div class="col-md-7">
+                <input asp-for="diachi" class="form-control">
+                <span asp-validation-for="diachi" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="nut">
+            <button type="submit" name="dangky" class="btn btn-info" id="signup">Đăng ký</button>
+            <button type="reset" class="btn btn-info" id="reset">Nhập lại</button>
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

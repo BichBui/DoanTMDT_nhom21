@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MvcPhone.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tenloai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.maloai)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tenloai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.maloai)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.idLSP">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.idLSP">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.idLSP">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

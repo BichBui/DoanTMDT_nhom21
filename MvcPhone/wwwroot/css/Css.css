@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+.header{
+	height:250px;
+   	background:#FFF;
+	font-weight:bold;
+}
+.p-header:hover{
+	color:#FFF;
+}
+.search{
+	width:100%;
+	height:50px;
+	border:#F33;
+	border-style:ridge;
+	border-radius: 40px 40px 40px 40px;
+	padding-left:20px;
+}
+.input-search1{
+  	height: 43px;
+ 	width: 90%;
+	border:none;
+}
+
+.button-search{
+	height: 50px;
+  	width: 100%;
+	background: #D10024;
+	color: #FFF;
+	font-weight: 700;
+	border-radius: 40px 40px 40px 40px;
+}
+.p-cart{
+	font-weight:bold;
+	padding-top:90px; 
+}
+.p-cart:hover{
+	color:#DF5020;
+	text-decoration:underline #DF5020 ;
+}
+.contain{
+	height:1600px;
+}
+.p-contain-top{
+	font-weight:bold;
+	font-size:16px;
+}
+.p-contain-top:hover{
+	color:#DF5020;
+	text-decoration:underline #DF5020 ;
+}
+.menu{
+	font-weight:bold;
+	font-size:16px;
+}
+.menu:hover{
+	color:#DF5020;
+}
+.p-product{
+	font-weight:bold;
+	font-size:14px;
+}
+
+.p-product:hover{
+	color:#DF5020;
+}
+.button-cart{
+	background: #D10024;
+	color: #FFF;
+	font-weight: 700;
+	border-radius: 15px 15px 15px 15px;
+}
+.input{
+	border-color:#DF5020;
+	width:700px;
+	height:50px;
+	background:#FEEDDE;
+}
+

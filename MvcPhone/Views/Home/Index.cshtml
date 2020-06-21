@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MvcPhone.Models.Product>
+<div id="maincontent" class="col-xs-12 col-sm-8 col-md-12 ">
+
+    <div class="text-left">
+        <form asp-controller="Home" asp-action="Index">
+            <label>TÌM KIẾM NÂNG CAO:</label>
+            <input type="text" class="timnc" name="search2" value="" placeholder="Nhập sản phẩm" id="tennc">
+            <span>GIÁ: </span>
+            <input type="text" name="start" placeholder="Giá từ" class="timnc" id="giatu" onkeyup="kiemtraso()">
+            <input type="text" name="finish" placeholder="Giá đến" class="timnc" id="giaden" onkeyup="kiemtrasoden()">
+
+            <button type="submit" class="btn btn-info" name="SearchString">Tìm kiếm</button>
+        </form>
+    </div>
+    <div class="boxmain">
+        <div class='tit-boxmain'>
+
+            <h3><span>@ViewData["Message"] </span></h3>
+        </div><div class='ct-boxmain row m0'>
+            @foreach (var item in Model)
+            {
+                <div class='col-xs-6 col-sm-4 col-md-3 p5'>
+                    <div class='boxsp'>
+                        <div class='imgsp'>
+                            <a asp-action="Product" asp-controller="Products" asp-route-id="@item.idSP"><img class='imgproduct' src="~/Content/images/products/@item.hinhanh"></a>
+                            <div class='img-label'>
+                                <img src="~/Content/images/hot.png" />
+                            </div>
+                        </div>
+                        <div class='namesp'>
+                            <a href='#'>@item.tenSP</a>
+                        </div>
+                        <div class='pricesp'>@item.gia VNĐ</div>
+                        <div class='button-hd'>
+                            <a href='javascript:void(0)' onclick='themgiohang(@item.idSP)'><i class='fa fa-shopping-cart' aria-hidden='true'></i></a>
+                            <a href='index.php?xem=chitietsanpham&id=@item.idSP'><i class='fa fa-eye' aria-hidden='true'></i></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
+
+
+

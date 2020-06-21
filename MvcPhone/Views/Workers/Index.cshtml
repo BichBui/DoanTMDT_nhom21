@@ -1,0 +1,33 @@
+﻿
+<div class="col-xs-12 col-sm-8 col-md-9 ">
+<form asp-action="Index">
+    <div class="labelform"><p style="text-align:center;">ĐĂNG NHẬP</p></div>
+    <span class="text-danger">@ViewBag.error</span>
+    <div class="form-group">
+        <label class="col-md-3 control-label">
+            Gmail đăng nhập
+            <i class="fa fa-envelope prefix grey-text"></i>
+        </label>
+        <div class="col-md-7">
+            <input  class="form-control" name="email">
+            <span  class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 control-label">
+            Mật khẩu
+            <i class="fa fa-lock prefix grey-text"></i>
+        </label>
+        <div class="col-md-7">
+            <input  class="form-control" name="password">
+            <span  class="text-danger"></span>
+        </div>
+    </div>
+    <div class="nut">
+        <button type="submit" class="btn btn-info">Đăng nhập</button>
+        <button type="reset" class="btn btn-info">Nhập lại</button>
+    </div>
+</form>
+</div>
+
+

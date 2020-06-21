@@ -1,0 +1,48 @@
+﻿@model MvcPhone.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.idLSP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idLSP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tenSP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tenSP)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.mota)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.mota)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.gia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.gia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.hinhanh)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.hinhanh)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idSP">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

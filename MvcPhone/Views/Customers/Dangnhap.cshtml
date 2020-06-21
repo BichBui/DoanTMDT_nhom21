@@ -1,0 +1,50 @@
+﻿@model MvcPhone.Models.Customer
+<p>@ViewBag.Sessionhoten</p>
+<div class="hidden-xs col-sm-4 col-md-3">
+    <div class="boxleft">
+        <div class="titboxl">
+            <span>TÀI KHOẢN</span>
+        </div>
+        <div class="ctboxleft">
+            <ul class="mnboxl">
+                <li><a asp-action="Dangky" asp-controller="Customers"><i class="fa fa-user-plus"></i>Đăng ký</a></li>
+                <li><a asp-action="Dangnhap" asp-controller="Customers"> <i class="fa fa-user-plus"></i>Đăng nhập</a></li>
+                <li><a href=""><i class="fa fa-key"></i>Quên mật khẩu</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-8 col-md-9 ">
+    <form asp-action="Dangnhap">
+        <div class="labelform"><p style="text-align:center;">ĐĂNG NHẬP</p></div>
+        <span class="text-danger">@ViewBag.error</span>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                Gmail đăng nhập
+                <i class="fa fa-envelope prefix grey-text"></i>
+            </label>
+            <div class="col-md-7">
+                <input asp-for="gmail" class="form-control" name="email">
+                <span asp-validation-for="gmail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 control-label">
+                Mật khẩu
+                <i class="fa fa-lock prefix grey-text"></i>
+            </label>
+            <div class="col-md-7">
+                <input asp-for="matkhau" class="form-control" name="password">
+                <span asp-validation-for="matkhau" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="nut">
+            <button type="submit"  class="btn btn-info" >Đăng nhập</button>
+            <button type="reset" class="btn btn-info" >Nhập lại</button>
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

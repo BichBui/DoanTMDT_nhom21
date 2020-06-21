@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MvcPhone.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idLSP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tenSP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hinhanh)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idLSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hinhanh)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idSP">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idSP">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idSP">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
